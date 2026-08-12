@@ -15,6 +15,7 @@
   >
 
   <style>
+
     :root {
       --brand-blue: #1737B8;
       --link-blue: #4676D7;
@@ -34,26 +35,30 @@
       padding: 32px 28px 50px;
       line-height: 1.6;
       color: var(--text-dark);
-      position: relative;
     }
 
-    /* Faint decorative lock */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 70px;
-      right: 30px;
-      width: 300px;
-      height: 300px;
+    /* HEADER */
 
-      background-image: url("assets/lock.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
+    .hero {
+      position: relative;
+      min-height: 150px;
+    }
 
-      opacity: 0.04;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .hero-mark {
+      position: absolute;
+      top: -5px;
+      right: 5px;
+      width: 190px;
+      height: 190px;
+      opacity: 0.055;
+      z-index: 1;
       pointer-events: none;
-      z-index: -1;
     }
 
     h1 {
@@ -63,23 +68,6 @@
       color: var(--brand-blue);
       margin: 0 0 8px;
       font-weight: 400;
-    }
-
-    h2 {
-      font-size: 1.35rem;
-      line-height: 1.3;
-      margin: 34px 0 12px;
-      color: var(--text-dark);
-    }
-
-    a {
-      color: var(--link-blue);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--brand-blue);
-      text-decoration: underline;
     }
 
     .tagline {
@@ -109,8 +97,28 @@
       font-size: 1.08rem;
       color: var(--text-muted);
       margin: 0 0 28px;
-      max-width: 850px;
     }
+
+    /* GENERAL */
+
+    h2 {
+      font-size: 1.35rem;
+      line-height: 1.3;
+      margin: 34px 0 12px;
+      color: var(--text-dark);
+    }
+
+    a {
+      color: var(--link-blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--brand-blue);
+      text-decoration: underline;
+    }
+
+    /* PROJECT */
 
     .project-description {
       margin: 0 0 10px;
@@ -120,6 +128,8 @@
       font-size: 0.98rem;
       font-weight: 700;
     }
+
+    /* INSIGHTS */
 
     .section-intro {
       color: var(--text-muted);
@@ -158,7 +168,10 @@
       font-size: 0.98rem;
     }
 
+    /* MOBILE */
+
     @media (max-width: 650px) {
+
       body {
         padding: 28px 20px 40px;
       }
@@ -173,76 +186,60 @@
 
       .tagline {
         font-size: 1rem;
-          }
-
-          body::before {
-            width: 210px;
-            height: 210px;
-            right: -30px;
-            top: 100px;
-            opacity: 0.03;
-          }
-
-          .hero {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-mark {
-      position: absolute;
-      top: -15px;
-      right: 20px;
-      width: 230px;
-      height: 230px;
-      opacity: 0.055;
-      z-index: 0;
-      pointer-events: none;
       }
 
-      @media (max-width: 650px) {
-  .hero-mark {
-    width: 160px;
-    height: 160px;
-    right: -25px;
-    top: 5px;
-    opacity: 0.035;
-  }
-}
-      
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-mark {
+        width: 135px;
+        height: 135px;
+        right: -30px;
+        top: 10px;
+        opacity: 0.03;
+      }
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <header>
+  <header class="hero">
 
-    <h1>Molly Bentley Ussery</h1>
+    <img
+      src="assets/lock.svg"
+      class="hero-mark"
+      alt=""
+      aria-hidden="true"
+    >
 
-        <h3 class="tagline">
-      Cybersecurity • Security Operations • Incident Response
-    </h3>
+    <div class="hero-content">
 
-    <nav class="portfolio-links">
-      <a href="https://github.com/mbbu-beep">GitHub</a>
-      <span>|</span>
-      <a href="https://www.linkedin.com/in/mollybbussery/">LinkedIn</a>
-      <span>|</span>
-      <a href="https://github.com/mbbu-beep/splunk-snort-soc-lab">Projects</a>
-    </nav>
+      <h1>Molly Bentley Ussery</h1>
 
-    <p class="intro">
-      Cybersecurity professional with hands-on experience in incident response,
-      digital forensics, Microsoft 365 security, endpoint monitoring, IAM, and SIEM.
-    </p>
+      <h3 class="tagline">
+        Cybersecurity • Security Operations • Incident Response
+      </h3>
 
-  </div>
+      <nav class="portfolio-links">
+        <a href="https://github.com/mbbu-beep">GitHub</a>
+        <span>|</span>
+        <a href="https://www.linkedin.com/in/mollybbussery/">LinkedIn</a>
+        <span>|</span>
+        <a href="https://github.com/mbbu-beep/splunk-snort-soc-lab">Projects</a>
+      </nav>
 
-</header>
+      <p class="intro">
+        Cybersecurity professional with hands-on experience in incident response,
+        digital forensics, Microsoft 365 security, endpoint monitoring, IAM, and SIEM.
+      </p>
+
+    </div>
+
+  </header>
 
 
   <main>
@@ -352,4 +349,5 @@
   </main>
 
 </body>
+
 </html>
